@@ -1,13 +1,74 @@
+// ========== [ Globals ] ==========
+let user = {
+    FNAME: null,
+    LNAME: null,
+    EMAIL: null,
+    PHONE: null,
+
+    ARRIVAL: false,
+    DEPARTURE: false,
+
+    FOUND: false
+};
+
+// ========== [ Events ] ==========
+
+// Page Load
 $(document).ready(function() {
-    console.log(urlObj());
-    console.log(urlObj().FNAME);
-    console.log(urlObj().LNAME);
+    // Init Materialize
+    $('.collapsible').collapsible();
 
+    // Init User
+    user.FNAME = urlObj().FNAME;
+    user.LNAME = urlObj().LNAME;
+    user.EMAIL = urlObj().EMAIL;
+    user.PHONE = urlObj().PHONE;
 
+    // Display Card
+    let card = $('#card');
+
+    checkUser();
+    //     .then(function(found) {
+    //         console.log(found);
+    //         if (found) {
+    //             console.log('User Found');
+    //             card.addClass('teal');
+    //             card.show();
+    //         } else {
+    //             console.log('User Not Found');
+    //             card.addClass('red lighten-1');
+    //             card.show();
+    //         }
+    //
+    //     }).catch(function() {
+    //         console.log('wtf')
+    // });
+
+    countMembers();
 
 });
 
+// Add Member
+$('#addForm').submit(function(e) {
+    e.preventDefault();
 
+    let form = document.getElementById("addForm");
+
+    db.collection('lists').doc('List 1').collection("members").add({
+        FNAME: form.user_FNAME.value,
+        LNAME: form.user_LNAME.value,
+        EMAIL: form.user_EMAIL.value,
+        PHONE: form.user_PHONE.value,
+    });
+
+    form.user_FNAME.value = '';
+    form.user_LNAME.value = '';
+    form.user_EMAIL.value = '';
+    form.user_PHONE.value = '';
+
+});
+
+// Admin CVS Import
 $('#listImport').submit(function(e) {
     e.preventDefault();
 
@@ -39,6 +100,7 @@ $('#listImport').submit(function(e) {
 
 });
 
+// ========== [ Functions ] ==========
 
 function urlObj() {
     let urlParams = new URLSearchParams(window.location.search);
@@ -50,3 +112,259 @@ function urlObj() {
     }
     return url;
 }
+
+function checkUser() {
+    return new Promise(function(resolve, reject) {
+        db.collection('lists').doc('List 1').collection("members")
+            .where("EMAIL", "==", user.EMAIL)
+            .get()
+            .then(function(querySnapshot) {
+                $('#NAME').html(user.FNAME + ' ' + user.LNAME);
+                $('#EMAIL').html(user.EMAIL);
+                $('#PHONE').html(user.PHONE);
+
+                querySnapshot.forEach(function(doc) {
+                    // doc.data() is never undefined for query doc snapshots
+                    console.log(doc.id, " => ", doc.data());
+                    Object.assign(user, doc.data());
+
+                    $('#NAME').html(user.FNAME + ' ' + user.LNAME);
+                    $('#EMAIL').html(user.EMAIL);
+                    $('#PHONE').html(user.PHONE);
+
+                    $('#card').click(function() {
+                        window.open('https://us16.admin.mailchimp.com/lists/members/view?id=' + user.LEID, '_blank');
+                    });
+                    checkIn(doc.id, (new Date().getHours() < 18));
+                    if (doc.data().ARRIVAL != '' && doc.data().ARRIVAL) {$('#ARRIVAL').html('check_box')}
+                    if (doc.data().DEPARTURE != '' && doc.data().DEPARTURE) {$('#DEPARTURE').html('check_box')}
+
+                    user.FOUND = true;
+                });
+                resolve = (user.FOUND);
+
+                let card = $('#card');
+
+                if (user.FOUND) {
+                    console.log('User Found');
+                    card.addClass('teal');
+                    card.show();
+                } else {
+                    console.log('User Not Found');
+                    card.addClass('red lighten-1');
+                    card.show();
+                }
+
+
+            })
+            .catch(function(error) {
+                console.log("Error getting documents: ", error);
+                reject();
+            });
+    });
+}
+
+function checkIn(docID, Arrival) {
+    let doc = db.collection('lists').doc('List 1').collection("members").doc(docID);
+    if(Arrival) {
+        doc.set({
+            ARRIVAL: new Date()
+        }, { merge: true });
+    } else {
+        doc.set({
+            DEPARTURE: new Date()
+        }, { merge: true });
+    }
+}
+
+function renderList(doc) {
+    var row = document.createElement('div');
+    row.className += 'grid-row';
+
+
+    let li = document.createElement('li');
+    li.className = "member";
+    li.setAttribute("data-id", doc.id);
+
+    // Header
+    let header = document.createElement('div');
+    header.className = "collapsible-header";
+
+        let arriveIcon = document.createElement('i');
+        arriveIcon.className = "arriveIcon material-icons";
+        if (doc.data().ARRIVAL && doc.data().ARRIVAL !='') {
+            arriveIcon.innerText = "check_box";
+        } else {
+            arriveIcon.innerText = "check_box_outline_blank";
+        }
+
+        let departIcon = document.createElement('i');
+        departIcon.className = "departIcon material-icons";
+        if (doc.data().DEPARTURE && doc.data().DEPARTURE !='') {
+            departIcon.innerText = "check_box";
+        } else {
+            departIcon.innerText = "check_box_outline_blank";
+        }
+
+    header.appendChild(arriveIcon);
+    header.appendChild(departIcon);
+    header.innerHTML += (doc.data().FNAME + ' ' + doc.data().LNAME);
+
+    // Body
+    let body = document.createElement('div');
+    body.className = "collapsible-body";
+
+        let infoRow = document.createElement('div');
+        infoRow.className = "row";
+
+            let infoEmail = document.createElement('div');
+            infoEmail.className = "col s6";
+            infoEmail.innerHTML = doc.data().EMAIL;
+
+            let infoPhone = document.createElement('div');
+            infoPhone.className = "col s6";
+            infoPhone.innerHTML = doc.data().PHONE;
+
+        infoRow.appendChild(infoEmail);
+        infoRow.appendChild(infoPhone);
+
+        let checkInRow = document.createElement('div');
+        checkInRow.className = "row";
+
+            let checkInArrive = document.createElement('div');
+            checkInArrive.className = "btn waves-effect waves-light";
+
+                let checkInArriveIcon = document.createElement('i');
+                checkInArriveIcon.className = "material-icons left";
+
+                if (doc.data().ARRIVAL && doc.data().ARRIVAL !='') {
+                    checkInArriveIcon.innerText = "check_box";
+                } else {
+                    checkInArriveIcon.innerText = "check_box_outline_blank";
+                }
+
+                checkInArrive.appendChild(checkInArriveIcon);
+                checkInArrive.innerHTML += 'Arrival';
+
+            let checkInDepart = document.createElement('div');
+            checkInDepart.className = "btn waves-effect waves-light";
+
+                let checkInDepartIcon = document.createElement('i');
+                checkInDepartIcon.className = "material-icons left";
+
+                if (doc.data().DEPARTURE && doc.data().DEPARTURE !='') {
+                    checkInDepartIcon.innerText = "check_box";
+                } else {
+                    checkInDepartIcon.innerText = "check_box_outline_blank";
+                }
+
+                checkInDepart.appendChild(checkInDepartIcon);
+                checkInDepart.innerHTML += 'Departure';
+
+            checkInRow.appendChild(checkInArrive);
+            checkInRow.appendChild(checkInDepart);
+
+        let actionRow = document.createElement('div');
+        actionRow.className = "row";
+
+            let profileBtn = document.createElement('a');
+            profileBtn.className = "btn waves-effect waves-light blue";
+            profileBtn.href = "https://us16.admin.mailchimp.com/lists/members/view?id=" + doc.data().LEID;
+            profileBtn.target = "_blank";
+
+            profileBtn.innerHTML += "Profile";
+
+                let profileBtnIcon = document.createElement('i');
+                profileBtnIcon.className = "material-icons right";
+                profileBtnIcon.innerHTML += "send";
+
+                profileBtn.appendChild(profileBtnIcon);
+
+            let removeBtn = document.createElement('div');
+            removeBtn.className = "btn waves-effect waves-light red";
+            removeBtn.innerHTML += "Remove";
+
+                let removeBtnIcon = document.createElement('i');
+                removeBtnIcon.className = "material-icons white-text right";
+                removeBtnIcon.innerHTML += "delete";
+
+                removeBtn.appendChild(removeBtnIcon);
+
+            actionRow.appendChild(profileBtn);
+            actionRow.appendChild(removeBtn);
+
+        body.appendChild(infoRow);
+        body.appendChild(checkInRow);
+        body.appendChild(actionRow);
+
+    li.appendChild(header);
+    li.appendChild(body);
+
+    //Buttons
+
+    removeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        let id = e.target.parentElement.parentElement.parentElement.getAttribute("data-id");
+        //db.collection('lists').doc('List 1').collection("members").doc(id).delete();
+    })
+
+
+
+
+
+
+    $('#List').append(li);
+
+}
+
+db.collection('lists').doc('List 1').collection("members").onSnapshot(
+    snapshot => {
+        let changes = snapshot.docChanges();
+        console.log(changes)
+        changes.forEach(change => {
+            console.log(change.doc.data())
+            if (change.type == "added") {
+                renderList(change.doc);
+            }else if (change.type == "removed") {
+                let li = document.getElementById("List").querySelector('[data-id=' + change.doc.id + ']');
+                document.getElementById("List").removeChild(li);
+            }
+        })
+    }
+)
+
+
+function countMembers() {
+    let currentCount = 0;
+
+    if (new Date().getHours() < 18) {
+        db.collection('lists').doc('List 1').collection("members")
+            .get().then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc) {
+                if (doc.data().ARRIVAL && doc.data().ARRIVAL !='') {
+                    currentCount++;
+                    $('#membercount').html(currentCount + ' / 54');
+                }
+            });
+        });
+    } else {
+        db.collection('lists').doc('List 1').collection("members")
+            .get().then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc) {
+                if (doc.data().DEPARTURE && doc.data().DEPARTURE !='') {
+                    currentCount++;
+                    $('#membercount').html(currentCount + ' / 54');
+                }
+            });
+        });
+    }
+
+
+}
+
+/*
+
+.collection("members")
+    .orderBy("Attendance", "asc")
+
+    */

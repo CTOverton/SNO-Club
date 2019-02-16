@@ -7,7 +7,8 @@
     <!-- Firebase App is always required and must be first -->
     <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <!--<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>-->
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
     <script>
         // Initialize Firebase
         var config = {
@@ -19,6 +20,7 @@
             messagingSenderId: "1051429519024"
         };
         firebase.initializeApp(config);
+        const db = firebase.firestore();
     </script>
 
     <!--Import Google Icon Font-->
@@ -27,12 +29,115 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="app.css">
+
 </head>
 <body>
 
+    <div class="container">
 
-<script src="libs/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="libs/materialize.js"></script>
-<script src="app.js"></script>
+        <!-- Current User Card -->
+        <div class="row">
+            <div class="col s12 m6">
+                <div id="card" class="card" style="display: none">
+                    <div class="card-content white-text">
+                        <span id="NAME" class="card-title">FirstName LastName</span>
+                        <p id="EMAIL">No Email</p>
+                        <p id="PHONE">No Phone</p>
+                    </div>
+                    <div class="card-action white-text">
+                        <div class="row">
+                            <div class="col s6">
+                                <i id="ARRIVAL" class="material-icons left">check_box_outline_blank</i>Arrival
+                            </div>
+                            <div class="col s6">
+                                <i id="DEPARTURE" class="material-icons left">check_box_outline_blank</i>Departure
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="membercount" class="row">
+        </div>
+
+        <div class="row">
+            <form id="addForm">
+
+                <input name="user_FNAME" placeholder="First Name"/>
+                <input name="user_LNAME" placeholder="Last Name"/>
+                <input name="user_EMAIL" placeholder="Email"/>
+                <input name="user_PHONE" placeholder="Phone"/>
+                <button class="btn waves-effect waves-light blue" type="submit" name="action">Add Member
+                    <i class="material-icons right">send</i>
+                </button>
+
+            </form>
+        </div>
+
+
+        <!-- List -->
+        <div class="row">
+            <ul id="List" class="collapsible">
+
+                <!--<li>-->
+                    <!--<div class="collapsible-header">-->
+                        <!--<i class="material-icons">check_box_outline_blank</i>-->
+                        <!--<i class="material-icons">check_box_outline_blank</i>-->
+                        <!--Christian Overton-->
+                    <!--</div>-->
+                    <!--<div class="collapsible-body">-->
+                        <!--<div class="row">-->
+                            <!--<div class = "col s6">C@CTOverton.com</div>-->
+                            <!--<div class = "col s6">4847233990</div>-->
+                        <!--</div>-->
+                        <!--<div class="row">-->
+                            <!--<div class="btn waves-effect waves-light"><i class="material-icons left">check_box_outline_blank</i>Arrival</div>-->
+                            <!--<div class="btn waves-effect waves-light"><i class="material-icons left">check_box_outline_blank</i>Departure</div>-->
+                        <!--</div>-->
+                        <!--<div class="row">-->
+                            <!--<a class="btn waves-effect waves-light blue" href="https://us16.admin.mailchimp.com/lists/members/view?id=78377161" target="_blank">Profile<i class="material-icons right">send</i></a>-->
+                            <!--<div class="btn waves-effect waves-light red">Remove<i class="material-icons white-text right">delete</i></div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</li>-->
+
+            </ul>
+        </div>
+
+        <!-- Admin -->
+        <div class = "row ">
+            <form class = "col s12" id="listImport">
+                <div class = "row">
+                    <label>Upload CSV List</label>
+                    <div class = "file-field input-field">
+                        <div class = "btn blue">
+                            <span>Browse</span>
+                            <input id="upload" type="file" accept=".csv"/>
+                        </div>
+
+                        <div class = "file-path-wrapper">
+                            <input class = "file-path validate" type = "text"
+                                   placeholder = "Upload file" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="btn waves-effect waves-light blue" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                    <div class="progress hide">
+                        <div class="determinate" style="width: 70%"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="libs/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="libs/materialize.js"></script>
+    <script src="libs/jquery.csv.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
