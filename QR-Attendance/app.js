@@ -99,6 +99,116 @@ $('#listImport').submit(function(e) {
     }
 
 });
+$('#test').click(function() {
+
+    db.collection('lists').doc('List 1').collection("members").get().then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+
+            let keys = ['ARRIVAL', 'ATTENDANCE', 'DEPARTURE', 'EMAIL', 'FNAME', 'LNAME', 'LEID', 'NOTES', 'PHONE', 'RENT'];
+
+            keys.forEach(function(key){
+                let docData = doc.data();
+                if (docData[key] == null) {
+                    let dataobj = {};
+                    dataobj[key] = '';
+                    db.collection('lists').doc('List 1').collection("members").doc(doc.id).set(dataobj,
+                        { merge: true }).then(function () {
+                        console.log('Added '+ key +' to ' + doc.id);
+                    });
+                }
+            });
+
+
+        });
+    });
+
+
+/*    db.collection('lists').doc('List 1').collection("members").doc('3IDSGRPQZu4d56SvQ6J2')
+    .get().then(function (doc) {
+        console.log(doc);
+        if (doc.data().DEPARTURE == null) {
+            db.collection('lists').doc('List 1').collection("members").doc('3IDSGRPQZu4d56SvQ6J2').set({
+                DEPARTURE: ''
+            }, { merge: true });
+            console.log(doc.data().DEPARTURE);
+        }
+        console.log(doc.data().DEPARTURE);
+
+    });*/
+
+
+});
+
+
+$('#download').click(function() {
+    db.collection('lists').doc('List 1').collection("members").get().then(function(querySnapshot) {
+        return querySnapshot.docs.map(function(doc) {
+            return doc.data();
+        });
+    }).then(function (exportArray) {
+        console.log(exportArray);
+        console.log(exportArray.length);
+
+        let csv ='';
+        let items = exportArray;
+
+        let keysAmount = Object.keys(items[0]).length;
+        // Loop the array of objects
+        for(let row = 0; row < items.length; row++){
+
+            let keysCounter = 0;
+
+            // If this is the first row, generate the headings
+            if(row === 0){
+
+                // Loop each property of the object
+                for(let key in items[row]){
+
+                    // This is to not add a comma at the last cell
+                    // The '\r\n' adds a new line
+                    csv += key + (keysCounter+1 < keysAmount ? ',' : '\r\n' );
+                    keysCounter++;
+                }
+                console.log(csv);
+            }else{
+                for(let key in items[row]){
+                    csv += '"' + items[row][key] + '"' + (keysCounter+1 < keysAmount ? ',' : '\r\n' );
+                    keysCounter++;
+                }
+            }
+
+            keysCounter = 0;
+        }
+
+// Once we are done looping, download the .csv by creating a link
+        let link = document.createElement('a')
+        link.id = 'download-csv'
+        link.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(csv));
+        link.setAttribute('download', 'yourfiletextgoeshere.csv');
+        document.body.appendChild(link)
+        document.querySelector('#download-csv').click()
+
+    });
+
+
+
+
+
+});
+
+
+
+
+
+
+/*
+
+querySnapshot.forEach(function(doc) {
+    promises.push();
+    exportObj.push(doc.data());
+
+});
+*/
 
 // ========== [ Functions ] ==========
 
@@ -115,52 +225,65 @@ function urlObj() {
 
 function checkUser() {
     return new Promise(function(resolve, reject) {
-        db.collection('lists').doc('List 1').collection("members")
-            .where("EMAIL", "==", user.EMAIL)
-            .get()
-            .then(function(querySnapshot) {
-                $('#NAME').html(user.FNAME + ' ' + user.LNAME);
-                $('#EMAIL').html(user.EMAIL);
-                $('#PHONE').html(user.PHONE);
-
-                querySnapshot.forEach(function(doc) {
-                    // doc.data() is never undefined for query doc snapshots
-                    console.log(doc.id, " => ", doc.data());
-                    Object.assign(user, doc.data());
-
+        if (user.EMAIL){
+            db.collection('lists').doc('List 1').collection("members")
+                .where("EMAIL", "==", user.EMAIL)
+                .get()
+                .then(function(querySnapshot) {
                     $('#NAME').html(user.FNAME + ' ' + user.LNAME);
                     $('#EMAIL').html(user.EMAIL);
                     $('#PHONE').html(user.PHONE);
 
-                    $('#card').click(function() {
-                        window.open('https://us16.admin.mailchimp.com/lists/members/view?id=' + user.LEID, '_blank');
+                    querySnapshot.forEach(function(doc) {
+                        // doc.data() is never undefined for query doc snapshots
+                        console.log(doc.id, " => ", doc.data());
+                        Object.assign(user, doc.data());
+
+                        $('#NAME').html(user.FNAME + ' ' + user.LNAME);
+                        $('#EMAIL').html(user.EMAIL);
+                        $('#PHONE').html(user.PHONE);
+
+                        $('#card').click(function() {
+                            window.open('https://us16.admin.mailchimp.com/lists/members/view?id=' + user.LEID, '_blank');
+                        });
+                        checkIn(doc.id, (new Date().getHours() < 18));
+                        if (doc.data().ARRIVAL != '' && doc.data().ARRIVAL) {$('#ARRIVAL').html('check_box')}
+                        if (doc.data().DEPARTURE != '' && doc.data().DEPARTURE) {$('#DEPARTURE').html('check_box')}
+
+                        user.FOUND = true;
                     });
-                    checkIn(doc.id, (new Date().getHours() < 18));
-                    if (doc.data().ARRIVAL != '' && doc.data().ARRIVAL) {$('#ARRIVAL').html('check_box')}
-                    if (doc.data().DEPARTURE != '' && doc.data().DEPARTURE) {$('#DEPARTURE').html('check_box')}
+                    resolve = (user.FOUND);
 
-                    user.FOUND = true;
+                    let card = $('#card');
+
+                    if (user.FOUND) {
+                        console.log('User Found');
+                        card.addClass('teal');
+                        card.show();
+                    } else {
+                        console.log('User Not Found');
+                        card.addClass('red lighten-1');
+                        card.show();
+                    }
+
+
+                })
+                .catch(function(error) {
+                    console.log("Error getting documents: ", error);
+                    reject();
                 });
-                resolve = (user.FOUND);
+        } else {
+            $('#NAME').html(user.FNAME + ' ' + user.LNAME);
+            $('#EMAIL').html(user.EMAIL);
+            $('#PHONE').html(user.PHONE);
 
-                let card = $('#card');
+            let card = $('#card');
 
-                if (user.FOUND) {
-                    console.log('User Found');
-                    card.addClass('teal');
-                    card.show();
-                } else {
-                    console.log('User Not Found');
-                    card.addClass('red lighten-1');
-                    card.show();
-                }
+            console.log('User Not Found');
+            card.addClass('red lighten-1');
+            card.show();
+        }
 
-
-            })
-            .catch(function(error) {
-                console.log("Error getting documents: ", error);
-                reject();
-            });
     });
 }
 
@@ -306,7 +429,7 @@ function renderList(doc) {
         e.stopPropagation();
         let id = e.target.parentElement.parentElement.parentElement.getAttribute("data-id");
         //db.collection('lists').doc('List 1').collection("members").doc(id).delete();
-    })
+    });
 
 
 
