@@ -197,6 +197,21 @@ $('#download').click(function() {
 });
 
 
+//Search
+const searchBar = document.forms['searchForm'].querySelector('input');
+searchBar.addEventListener('keyup',function(e){
+    const term = e.target.value.toLowerCase();
+    const users = document.querySelector('#List').getElementsByTagName('li');
+    Array.from(users).forEach(function(user){
+        const searchKey = user.firstElementChild.innerHTML;
+        if(searchKey.toLowerCase().indexOf(term) != -1) {
+            user.style.display = 'list-item';
+        } else {
+            user.style.display = 'none';
+        }
+    })
+});
+
 
 
 
@@ -308,6 +323,13 @@ function renderList(doc) {
     let li = document.createElement('li');
     li.className = "member";
     li.setAttribute("data-id", doc.id);
+
+    //For Search
+    let search = document.createElement('div');
+    search.className = 'search hide';
+    search.innerHTML = doc.data().FNAME + ' ' + doc.data().LNAME + ' ' + doc.data().EMAIL;
+
+    li.appendChild(search);
 
     // Header
     let header = document.createElement('div');
