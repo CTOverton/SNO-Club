@@ -5,44 +5,37 @@ let user = {
     EMAIL: null,
     PHONE: null,
 
+    ATTENDANCE:null,
+
     ARRIVAL: false,
     DEPARTURE: false,
 
     FOUND: false
 };
 
+let members = {};
+
+let list = "b4c0f0a45f"; // MailChimp List ID
+let mailChimpAPIKey = "d071ed5ac532f38747685cc50802ec88-us16";
+
+
 // ========== [ Events ] ==========
 
 // Page Load
 $(document).ready(function() {
     // Init Materialize
-    $('.collapsible').collapsible();
+    M.AutoInit();
+
+    // Get Members
+    getMembers();
 
     // Init User
-    user.FNAME = urlObj().FNAME;
-    user.LNAME = urlObj().LNAME;
-    user.EMAIL = urlObj().EMAIL;
-    user.PHONE = urlObj().PHONE;
+    Object.assign(user, urlObj());
 
     // Display Card
     let card = $('#card');
 
     checkUser();
-    //     .then(function(found) {
-    //         console.log(found);
-    //         if (found) {
-    //             console.log('User Found');
-    //             card.addClass('teal');
-    //             card.show();
-    //         } else {
-    //             console.log('User Not Found');
-    //             card.addClass('red lighten-1');
-    //             card.show();
-    //         }
-    //
-    //     }).catch(function() {
-    //         console.log('wtf')
-    // });
 
     countMembers();
 
@@ -121,22 +114,6 @@ $('#test').click(function() {
 
         });
     });
-
-
-/*    db.collection('lists').doc('List 1').collection("members").doc('3IDSGRPQZu4d56SvQ6J2')
-    .get().then(function (doc) {
-        console.log(doc);
-        if (doc.data().DEPARTURE == null) {
-            db.collection('lists').doc('List 1').collection("members").doc('3IDSGRPQZu4d56SvQ6J2').set({
-                DEPARTURE: ''
-            }, { merge: true });
-            console.log(doc.data().DEPARTURE);
-        }
-        console.log(doc.data().DEPARTURE);
-
-    });*/
-
-
 });
 
 
@@ -212,21 +189,9 @@ searchBar.addEventListener('keyup',function(e){
     })
 });
 
-
-
-
-
-/*
-
-querySnapshot.forEach(function(doc) {
-    promises.push();
-    exportObj.push(doc.data());
-
-});
-*/
-
 // ========== [ Functions ] ==========
 
+// Take URL Parameters and create object
 function urlObj() {
     let urlParams = new URLSearchParams(window.location.search);
 
@@ -238,6 +203,127 @@ function urlObj() {
     return url;
 }
 
+// Get Members and Create List
+function getMembers() {
+    getData('lists/'+ list + '/members')
+        .then(function (response) {
+            members = response;
+            console.log(members);
+    });
+}
+
+// ========== [ API ] ==========
+
+// MailChimp API GET
+function getData(endPoint) {
+    return new Promise(function (resolve, reject) {
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            // "url": "https://us-central1-sno-club.cloudfunctions.net/snoAPI/",
+            "url": "http://localhost:4000/",
+            "method": "GET",
+            "headers": {
+                "cache-control": "no-cache",
+                "Postman-Token": "c3adbc9b-07a2-455d-91c0-96b7f584a251"
+            }
+        }
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+    });
+}
+
+// Update Member
+function updateMember() {
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://us16.api.mailchimp.com/3.0/lists/" + list + "/members/86d52dcb38ae46d9b7671d7e8e3b9546",
+        "method": "PATCH",
+        "headers": {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer d071ed5ac532f38747685cc50802ec88-us16",
+            "cache-control": "no-cache",
+            "Postman-Token": "13791fbe-cc83-41ff-8e6c-8373a630a0cc"
+        },
+        "processData": false,
+        "data": "{\r\n    \"merge_fields\": {\r\n        \"AF\": false\r\n    }\r\n}"
+    }
+
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
+}
+
+
+// Firebase
+/*function checkUser() {
+    return new Promise(function(resolve, reject) {
+        if (user.EMAIL){
+            db.collection('lists').doc('List 1').collection("members")
+                .where("EMAIL", "==", user.EMAIL)
+                .get()
+                .then(function(querySnapshot) {
+                    $('#NAME').html(user.FNAME + ' ' + user.LNAME);
+                    $('#EMAIL').html(user.EMAIL);
+                    $('#PHONE').html(user.PHONE);
+
+                    querySnapshot.forEach(function(doc) {
+                        // doc.data() is never undefined for query doc snapshots
+                        console.log(doc.id, " => ", doc.data());
+                        Object.assign(user, doc.data());
+
+                        $('#NAME').html(user.FNAME + ' ' + user.LNAME);
+                        $('#EMAIL').html(user.EMAIL);
+                        $('#PHONE').html(user.PHONE);
+
+                        $('#card').click(function() {
+                            window.open('https://us16.admin.mailchimp.com/lists/members/view?id=' + user.LEID, '_blank');
+                        });
+                        checkIn(doc.id, (new Date().getHours() < 18));
+                        if (doc.data().ARRIVAL != '' && doc.data().ARRIVAL) {$('#ARRIVAL').html('check_box')}
+                        if (doc.data().DEPARTURE != '' && doc.data().DEPARTURE) {$('#DEPARTURE').html('check_box')}
+
+                        user.FOUND = true;
+                    });
+                    resolve = (user.FOUND);
+
+                    let card = $('#card');
+
+                    if (user.FOUND) {
+                        console.log('User Found');
+                        card.addClass('teal');
+                        card.show();
+                    } else {
+                        console.log('User Not Found');
+                        card.addClass('red lighten-1');
+                        card.show();
+                    }
+
+
+                })
+                .catch(function(error) {
+                    console.log("Error getting documents: ", error);
+                    reject();
+                });
+        } else {
+            $('#NAME').html(user.FNAME + ' ' + user.LNAME);
+            $('#EMAIL').html(user.EMAIL);
+            $('#PHONE').html(user.PHONE);
+
+            let card = $('#card');
+
+            console.log('User Not Found');
+            card.addClass('red lighten-1');
+            card.show();
+        }
+
+    });
+}*/
+
+// Api
 function checkUser() {
     return new Promise(function(resolve, reject) {
         if (user.EMAIL){
@@ -301,6 +387,7 @@ function checkUser() {
 
     });
 }
+
 
 function checkIn(docID, Arrival) {
     let doc = db.collection('lists').doc('List 1').collection("members").doc(docID);
@@ -506,10 +593,3 @@ function countMembers() {
 
 
 }
-
-/*
-
-.collection("members")
-    .orderBy("Attendance", "asc")
-
-    */
