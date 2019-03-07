@@ -27,7 +27,7 @@ router.get('/lists', function (req, res) {
 // Get List Members
 router.get('/lists/:listID/members', function (req, res) {
     let options = { method: 'GET',
-        url: 'https://us16.api.mailchimp.com/3.0/lists/' + req.params.listID + '/members',
+        url: 'https://us16.api.mailchimp.com/3.0/lists/' + req.params.listID + '/members?count=200',
         headers:
             { 'Postman-Token': '720c6f4d-7974-472d-a326-99e86e1a7a5c',
                 'cache-control': 'no-cache',
@@ -49,6 +49,28 @@ router.patch('/lists/:listID/members/:memberID', function (req, res) {
         url: 'https://us16.api.mailchimp.com/3.0/lists/' + req.params.listID + '/members/' + req.params.memberID,
         headers:
             { 'Postman-Token': '87403391-a33e-480c-a088-c0c83fc3eb8a',
+                'cache-control': 'no-cache',
+                Authorization: 'Basic ' + apiKey,
+                'Content-Type': 'application/json' },
+        body: req.body,
+        json: true };
+
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+        res.format({
+            'application/json': function(){
+                res.send(body);
+            }
+        });
+    });
+});
+
+// Add Member
+router.post('/lists/:listID/members/', function (req, res) {
+    let options = { method: 'POST',
+        url: 'https://us16.api.mailchimp.com/3.0/lists/' + req.params.listID + '/members/',
+        headers:
+            { 'Postman-Token': '36dcfa64-74a1-49bf-97e0-fe255c19d8c8',
                 'cache-control': 'no-cache',
                 Authorization: 'Basic ' + apiKey,
                 'Content-Type': 'application/json' },

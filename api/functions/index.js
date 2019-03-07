@@ -19,10 +19,10 @@ app.use(bodyParser.json());
 // Init api routes
 app.use(require('./routes/api'));
 
-// // Listen
-app.listen(process.env.port || 4000, function() {
- console.log('Listening')
-});
+// Listen
+// app.listen(process.env.port || 4000, function() {
+//  console.log('Listening')
+// });
 
 
 exports.snoAPI = functions.https.onRequest(app);
