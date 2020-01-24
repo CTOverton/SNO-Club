@@ -12,9 +12,8 @@ import {ReactReduxFirebaseProvider} from "react-redux-firebase";
 import {createFirestoreInstance} from "redux-firestore";
 import rrfConfig from "./config/rrfConfig";
 
-// Templates
-import TemplateFirestoreDisplay from "./components/FirestoreTemplates/TemplateFirestoreDisplay";
-import TemplateFirestoreAddItem from "./components/FirestoreTemplates/TemplateFirestoreAddItem";
+import {BrowserRouter} from "react-router-dom";
+import Routes from "./components/nav/Routes";
 
 const initialState ={}
 const store = configureStore(initialState)
@@ -29,28 +28,12 @@ function App() {
             config={rrfConfig}
             dispatch={store.dispatch}
             createFirestoreInstance={createFirestoreInstance}>
-          <div className="App">
-
-            <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-              <p>
-                Edit <code>src/App.js</code> and save to reload.
-              </p>
-              <a
-                  className="App-link"
-                  href="https://reactjs.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-              >
-                Learn React
-              </a>
-            </header>
-
-            {/* Templates */}
-            <TemplateFirestoreDisplay/>
-            <TemplateFirestoreAddItem/>
-
-          </div>
+          <BrowserRouter>
+            <div className="App">
+              {/*<Nav />*/}
+              <Routes />
+            </div>
+          </BrowserRouter>
         </ReactReduxFirebaseProvider>
       </Provider>
   );
