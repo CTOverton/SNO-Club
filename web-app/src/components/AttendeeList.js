@@ -41,11 +41,22 @@ function AttendeeList() {
 
     console.log(attendees)
 
+    const totalArriveReady = attendees.reduce((accumulator, currentValue) => currentValue.readyArrive === true ? ++accumulator : accumulator, 0)
+    const totalDepartReady = attendees.reduce((accumulator, currentValue) => currentValue.readyDepart === true ? ++accumulator : accumulator, 0)
+
     return (
         <List className={classes.root}>
-            {attendees.map(({ id, ...attendee }, index) => (
-                <AttendeeListItem key={id} id={id} {...attendee} />
-            ))}
+            <p>Total Attendees: {attendees.length}</p>
+            <p>Total Arrived Ready: {totalArriveReady}</p>
+            <p>Total Depart Ready: {totalDepartReady}</p>
+            {/*{attendees.map(({ id, ...attendee }, index) => {
+                console.log(id, attendee, index)
+                return <AttendeeListItem key={attendee.email} id={id} {...attendee} />
+            })}*/}
+            {attendees.map(({ id, ...attendee }, index) => {
+                console.log(id, attendee, index)
+                return <AttendeeListItem key={attendee.email} id={id} {...attendee} />
+            })}
         </List>
     );
 }

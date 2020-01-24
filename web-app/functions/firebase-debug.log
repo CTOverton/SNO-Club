@@ -1,0 +1,382 @@
+[debug] [2020-01-24T16:43:24.621Z] ----------------------------------------------------------------------
+[debug] [2020-01-24T16:43:24.622Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\overt\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only functions
+[debug] [2020-01-24T16:43:24.622Z] CLI Version:   7.12.1
+[debug] [2020-01-24T16:43:24.622Z] Platform:      win32
+[debug] [2020-01-24T16:43:24.622Z] Node Version:  v10.14.2
+[debug] [2020-01-24T16:43:24.623Z] Time:          Fri Jan 24 2020 11:43:24 GMT-0500 (Eastern Standard Time)
+[debug] [2020-01-24T16:43:24.623Z] ----------------------------------------------------------------------
+[debug] [2020-01-24T16:43:24.623Z] 
+[debug] [2020-01-24T16:43:24.631Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-24T16:43:24.631Z] > authorizing via signed-in user
+[info] i  emulators: Starting emulators: functions
+[warn] !  Your requested "node" version "8" doesn't match your global version "10"
+[info] +  functions: Emulator started at http://localhost:5001
+[info] i  functions: Watching "D:\Code\School\SNO\web-app\functions" for Cloud Functions...
+[debug] [2020-01-24T16:43:27.156Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-24T16:43:27.156Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-01-24T16:43:27.157Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-24T16:43:27.157Z] [worker-~diagnostic~-4d5c982b-ebf7-497e-91ce-127382351e6c]: Assigning socketPath: \\?\pipe\D:\Code\School\SNO\web-app\functions\27916
+[debug] [2020-01-24T16:43:27.157Z] [worker-~diagnostic~-4d5c982b-ebf7-497e-91ce-127382351e6c]: BUSY
+[debug] [2020-01-24T16:43:27.473Z] [runtime-status] [27916] Functions runtime initialized. {"cwd":"D:\\Code\\School\\SNO\\web-app\\functions","node_version":"10.14.2"}
+[debug] [2020-01-24T16:43:27.474Z] [runtime-status] [27916] Disabled runtime features: undefined
+[debug] [2020-01-24T16:43:27.478Z] [runtime-status] [27916] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.1","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-01-24T16:43:27.480Z] [runtime-status] [27916] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-24T16:43:27.772Z] [runtime-status] [27916] Found google-gax at D:\Code\School\SNO\web-app\functions\node_modules\google-gax\build\src\index.js
+[debug] [2020-01-24T16:43:27.772Z] [runtime-status] [27916] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2020-01-24T16:43:27.820Z] [runtime-status] [27916] Checked functions.config() {"config":{}}
+[debug] [2020-01-24T16:43:27.820Z] [runtime-status] [27916] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-24T16:43:27.821Z] [runtime-status] [27916] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.1","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-01-24T16:43:27.822Z] [runtime-status] [27916] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-24T16:43:27.887Z] [runtime-status] [27916] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.9.1","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2020-01-24T16:43:28.256Z] [runtime-status] [27916] initializeApp(DEFAULT) {"databaseURL":"https://sno-club.firebaseio.com","storageBucket":"sno-club.appspot.com","projectId":"sno-club","credential":{"projectId":"sno-club","privateKey":"-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCLMM7xv4KGWhZU\nzJJNEHJBD+l1Q1p6H8GRcPlH/sX3phAyxYr3e68nJVxvECYAhKRu1veJ0DMfiWkK\nwVLmSwJvA6/qiqKNckwHTt29v0i3SrpBPtLJfLlLYh9/CxwZOqCI7CtyYA1aN1F2\nSLixGNWINcacnYo2OUg9txs+vMrF/sVCNJaFp5hBupmNhe/RLwplGMdyNMS2EJJ5\nFKfSQgM6RoG6KsL+DP9pcGI4gBxoxNb/3dOPJvSJ0K2yFtJfkMnYFXo+Z1xd7HYf\nsPl3LFX14RyFtT3y0DQL46vaB86x9+NVI1JVNZB3jKaKvpwRLFvsLYf9BzjxRyD2\nKBCo5eWnAgMBAAECggEARD8mwM7TS1fBikuR0lplgvQv1lCzfJy0dsELYRsQ6xfP\n6m0EccsBuvJtK4Gh+HARBc2+KqLcZjKkP+NBZ+xQYalPqHLYN/1aPN0VCTPQjhqE\nT3hjtupCGi2e3tZOLSqbSvdtaBOjiGAGP7ZxZFgWXsZrPyBZg7O7cZMltzGvRLuo\nwYWu/TlrZIxJAn7Xjv8r0jv0Vn+twv3bsL0QUQ7gFKLhTzOY1zQVNIelt33D4iUf\npfyDRspCuagkcC3lsldnvX+E6uoSeIzJKhuB79OZUJDb31Bhy1h/YC2K8QPbWnt8\nMSiGmlE6sRB107snaiTqAWVb15TWsAm7K5XrT02H2QKBgQDCQol5vOOERFTleM64\nFyUrvXX1/ejVzg0kZ0dA8I5J7SU/f5OK6gO61WUTvKOwnq8HB6kKfLb++VwVU3Vf\nctFd3fbuU7udyAGBlWiwNn8hHNTVrV2oWM4o4KGsF1VSii3/+gfuvJwHM85HRuNI\nUT6ksNuAhrBiNTsGx5/R+KntnwKBgQC3bbOsMdceIsGJLoBVjz5FyAbUEFNXGizX\n/q8froSehmAa3lD/6gcvcAYL6ptt35hs1ZHEdflKSZibsntuuXLtogVSCeaSbMR1\nR6m1FYhEdRh2X5iIVcpNakqfREIgdIy3yNXhhR9SbVMwKwM2KrBFWS1M68STKVT+\nFZ6Sk6B6+QKBgQCsTr6IZ/5bLQ0sufqKmaUT5irCtqSXOPy5RI6UUIu1kQ8QAsZJ\nWodSasQMPK/pEufnUWkkbzkWcvK1y+B5eGuzWhYUkdsB+g0z9uX0H3KmWV+D5RIF\nKDg9U/qzncLFwuFIg2wT2+J+FPqsiHlDhSUOif05RL8hbVvdCKZ/ZZS8uwKBgHc0\nvQKYNWQpVDtx1AdGm0LAVue0YGUH5sLMikT9psRbMdPkTSGzls3WcKeH5VEHccix\nFxVlUghcQehVmu//Z1hV5j1Fn+ni894AH6NGhhNvQeGUCM35awram/pbYtoyxEyg\nIZd5azynPdvc6C5ombvH06/cvRiiUND7fd1mQXIJAoGBALKBga7hsyJSwjrJN3Nf\n9r5d4tq8YecWBdrW9za1FZrTCnNsQbTQRzIvXYmlbpQs8fNybVM1nzlOOTEjybIh\nO2fgsmqaYjL43FQ6fhLNZhKOnHIjiivRMmQHe9DFaIvcL7OfAjieLU4rYUrRqrLV\n7I4RGZn1LKnw7Gjkt0ir9l16\n-----END PRIVATE KEY-----\n","clientEmail":"firebase-adminsdk-4sjyw@sno-club.iam.gserviceaccount.com","httpClient":{"retry":{"maxRetries":4,"statusCodes":[503],"ioErrorCodes":["ECONNRESET","ETIMEDOUT"],"backOffFactor":0.5,"maxDelayInMillis":60000}}}}
+[warn] !  ReferenceError: functions is not defined
+    at Object.<anonymous> (D:\Code\School\SNO\web-app\functions\index.js:24:15)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+    at C:\Users\overt\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:718:33
+    at Generator.next (<anonymous>)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2020-01-24T16:43:28.346Z] [worker-~diagnostic~-4d5c982b-ebf7-497e-91ce-127382351e6c]: exited
+[debug] [2020-01-24T16:43:28.346Z] [worker-~diagnostic~-4d5c982b-ebf7-497e-91ce-127382351e6c]: FINISHED
+[debug] [2020-01-24T16:43:44.282Z] File D:\Code\School\SNO\web-app\functions\index.js changed, reloading triggers
+[debug] [2020-01-24T16:43:45.283Z] [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0
+[debug] [2020-01-24T16:43:45.285Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-24T16:43:45.285Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-01-24T16:43:45.285Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-24T16:43:45.285Z] [worker-~diagnostic~-72a31186-0ee6-4b0a-9ef1-fb966d0c6a06]: Assigning socketPath: \\?\pipe\D:\Code\School\SNO\web-app\functions\1500
+[debug] [2020-01-24T16:43:45.286Z] [worker-~diagnostic~-72a31186-0ee6-4b0a-9ef1-fb966d0c6a06]: BUSY
+[debug] [2020-01-24T16:43:45.564Z] File D:\Code\School\SNO\web-app\functions\index.js changed, reloading triggers
+[debug] [2020-01-24T16:43:45.602Z] [runtime-status] [1500] Functions runtime initialized. {"cwd":"D:\\Code\\School\\SNO\\web-app\\functions","node_version":"10.14.2"}
+[debug] [2020-01-24T16:43:45.603Z] [runtime-status] [1500] Disabled runtime features: undefined
+[debug] [2020-01-24T16:43:45.607Z] [runtime-status] [1500] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.1","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-01-24T16:43:45.609Z] [runtime-status] [1500] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-24T16:43:45.909Z] [runtime-status] [1500] Found google-gax at D:\Code\School\SNO\web-app\functions\node_modules\google-gax\build\src\index.js
+[debug] [2020-01-24T16:43:45.909Z] [runtime-status] [1500] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2020-01-24T16:43:45.957Z] [runtime-status] [1500] Checked functions.config() {"config":{}}
+[debug] [2020-01-24T16:43:45.958Z] [runtime-status] [1500] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-24T16:43:45.959Z] [runtime-status] [1500] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.1","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-01-24T16:43:45.960Z] [runtime-status] [1500] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-24T16:43:46.029Z] [runtime-status] [1500] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.9.1","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2020-01-24T16:43:46.417Z] [runtime-status] [1500] initializeApp(DEFAULT) {"databaseURL":"https://sno-club.firebaseio.com","storageBucket":"sno-club.appspot.com","projectId":"sno-club","credential":{"projectId":"sno-club","privateKey":"-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCLMM7xv4KGWhZU\nzJJNEHJBD+l1Q1p6H8GRcPlH/sX3phAyxYr3e68nJVxvECYAhKRu1veJ0DMfiWkK\nwVLmSwJvA6/qiqKNckwHTt29v0i3SrpBPtLJfLlLYh9/CxwZOqCI7CtyYA1aN1F2\nSLixGNWINcacnYo2OUg9txs+vMrF/sVCNJaFp5hBupmNhe/RLwplGMdyNMS2EJJ5\nFKfSQgM6RoG6KsL+DP9pcGI4gBxoxNb/3dOPJvSJ0K2yFtJfkMnYFXo+Z1xd7HYf\nsPl3LFX14RyFtT3y0DQL46vaB86x9+NVI1JVNZB3jKaKvpwRLFvsLYf9BzjxRyD2\nKBCo5eWnAgMBAAECggEARD8mwM7TS1fBikuR0lplgvQv1lCzfJy0dsELYRsQ6xfP\n6m0EccsBuvJtK4Gh+HARBc2+KqLcZjKkP+NBZ+xQYalPqHLYN/1aPN0VCTPQjhqE\nT3hjtupCGi2e3tZOLSqbSvdtaBOjiGAGP7ZxZFgWXsZrPyBZg7O7cZMltzGvRLuo\nwYWu/TlrZIxJAn7Xjv8r0jv0Vn+twv3bsL0QUQ7gFKLhTzOY1zQVNIelt33D4iUf\npfyDRspCuagkcC3lsldnvX+E6uoSeIzJKhuB79OZUJDb31Bhy1h/YC2K8QPbWnt8\nMSiGmlE6sRB107snaiTqAWVb15TWsAm7K5XrT02H2QKBgQDCQol5vOOERFTleM64\nFyUrvXX1/ejVzg0kZ0dA8I5J7SU/f5OK6gO61WUTvKOwnq8HB6kKfLb++VwVU3Vf\nctFd3fbuU7udyAGBlWiwNn8hHNTVrV2oWM4o4KGsF1VSii3/+gfuvJwHM85HRuNI\nUT6ksNuAhrBiNTsGx5/R+KntnwKBgQC3bbOsMdceIsGJLoBVjz5FyAbUEFNXGizX\n/q8froSehmAa3lD/6gcvcAYL6ptt35hs1ZHEdflKSZibsntuuXLtogVSCeaSbMR1\nR6m1FYhEdRh2X5iIVcpNakqfREIgdIy3yNXhhR9SbVMwKwM2KrBFWS1M68STKVT+\nFZ6Sk6B6+QKBgQCsTr6IZ/5bLQ0sufqKmaUT5irCtqSXOPy5RI6UUIu1kQ8QAsZJ\nWodSasQMPK/pEufnUWkkbzkWcvK1y+B5eGuzWhYUkdsB+g0z9uX0H3KmWV+D5RIF\nKDg9U/qzncLFwuFIg2wT2+J+FPqsiHlDhSUOif05RL8hbVvdCKZ/ZZS8uwKBgHc0\nvQKYNWQpVDtx1AdGm0LAVue0YGUH5sLMikT9psRbMdPkTSGzls3WcKeH5VEHccix\nFxVlUghcQehVmu//Z1hV5j1Fn+ni894AH6NGhhNvQeGUCM35awram/pbYtoyxEyg\nIZd5azynPdvc6C5ombvH06/cvRiiUND7fd1mQXIJAoGBALKBga7hsyJSwjrJN3Nf\n9r5d4tq8YecWBdrW9za1FZrTCnNsQbTQRzIvXYmlbpQs8fNybVM1nzlOOTEjybIh\nO2fgsmqaYjL43FQ6fhLNZhKOnHIjiivRMmQHe9DFaIvcL7OfAjieLU4rYUrRqrLV\n7I4RGZn1LKnw7Gjkt0ir9l16\n-----END PRIVATE KEY-----\n","clientEmail":"firebase-adminsdk-4sjyw@sno-club.iam.gserviceaccount.com","httpClient":{"retry":{"maxRetries":4,"statusCodes":[503],"ioErrorCodes":["ECONNRESET","ETIMEDOUT"],"backOffFactor":0.5,"maxDelayInMillis":60000}}}}
+[info] +  functions[api]: http function initialized (http://localhost:5001/sno-club/us-central1/api).
+[debug] [2020-01-24T16:43:46.486Z] [worker-~diagnostic~-72a31186-0ee6-4b0a-9ef1-fb966d0c6a06]: IDLE
+[debug] [2020-01-24T16:43:46.565Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-24T16:43:46.565Z] [worker-~diagnostic~-72a31186-0ee6-4b0a-9ef1-fb966d0c6a06]: FINISHING
+[debug] [2020-01-24T16:43:46.567Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-24T16:43:46.567Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-24T16:43:46.567Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-24T16:43:46.567Z] [worker-~diagnostic~-b2c53d62-4153-4793-8cfb-b3fde3f558e8]: Assigning socketPath: \\?\pipe\D:\Code\School\SNO\web-app\functions\17804
+[debug] [2020-01-24T16:43:46.568Z] [worker-~diagnostic~-b2c53d62-4153-4793-8cfb-b3fde3f558e8]: BUSY
+[debug] [2020-01-24T16:43:46.573Z] [worker-~diagnostic~-72a31186-0ee6-4b0a-9ef1-fb966d0c6a06]: exited
+[debug] [2020-01-24T16:43:46.573Z] [worker-~diagnostic~-72a31186-0ee6-4b0a-9ef1-fb966d0c6a06]: FINISHED
+[debug] [2020-01-24T16:43:46.891Z] [runtime-status] [17804] Functions runtime initialized. {"cwd":"D:\\Code\\School\\SNO\\web-app\\functions","node_version":"10.14.2"}
+[debug] [2020-01-24T16:43:46.892Z] [runtime-status] [17804] Disabled runtime features: undefined
+[debug] [2020-01-24T16:43:46.896Z] [runtime-status] [17804] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.1","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-01-24T16:43:46.898Z] [runtime-status] [17804] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-24T16:43:47.196Z] [runtime-status] [17804] Found google-gax at D:\Code\School\SNO\web-app\functions\node_modules\google-gax\build\src\index.js
+[debug] [2020-01-24T16:43:47.196Z] [runtime-status] [17804] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2020-01-24T16:43:47.242Z] [runtime-status] [17804] Checked functions.config() {"config":{}}
+[debug] [2020-01-24T16:43:47.243Z] [runtime-status] [17804] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-24T16:43:47.244Z] [runtime-status] [17804] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.1","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-01-24T16:43:47.244Z] [runtime-status] [17804] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-24T16:43:47.312Z] [runtime-status] [17804] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.9.1","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2020-01-24T16:43:47.681Z] [runtime-status] [17804] initializeApp(DEFAULT) {"databaseURL":"https://sno-club.firebaseio.com","storageBucket":"sno-club.appspot.com","projectId":"sno-club","credential":{"projectId":"sno-club","privateKey":"-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCLMM7xv4KGWhZU\nzJJNEHJBD+l1Q1p6H8GRcPlH/sX3phAyxYr3e68nJVxvECYAhKRu1veJ0DMfiWkK\nwVLmSwJvA6/qiqKNckwHTt29v0i3SrpBPtLJfLlLYh9/CxwZOqCI7CtyYA1aN1F2\nSLixGNWINcacnYo2OUg9txs+vMrF/sVCNJaFp5hBupmNhe/RLwplGMdyNMS2EJJ5\nFKfSQgM6RoG6KsL+DP9pcGI4gBxoxNb/3dOPJvSJ0K2yFtJfkMnYFXo+Z1xd7HYf\nsPl3LFX14RyFtT3y0DQL46vaB86x9+NVI1JVNZB3jKaKvpwRLFvsLYf9BzjxRyD2\nKBCo5eWnAgMBAAECggEARD8mwM7TS1fBikuR0lplgvQv1lCzfJy0dsELYRsQ6xfP\n6m0EccsBuvJtK4Gh+HARBc2+KqLcZjKkP+NBZ+xQYalPqHLYN/1aPN0VCTPQjhqE\nT3hjtupCGi2e3tZOLSqbSvdtaBOjiGAGP7ZxZFgWXsZrPyBZg7O7cZMltzGvRLuo\nwYWu/TlrZIxJAn7Xjv8r0jv0Vn+twv3bsL0QUQ7gFKLhTzOY1zQVNIelt33D4iUf\npfyDRspCuagkcC3lsldnvX+E6uoSeIzJKhuB79OZUJDb31Bhy1h/YC2K8QPbWnt8\nMSiGmlE6sRB107snaiTqAWVb15TWsAm7K5XrT02H2QKBgQDCQol5vOOERFTleM64\nFyUrvXX1/ejVzg0kZ0dA8I5J7SU/f5OK6gO61WUTvKOwnq8HB6kKfLb++VwVU3Vf\nctFd3fbuU7udyAGBlWiwNn8hHNTVrV2oWM4o4KGsF1VSii3/+gfuvJwHM85HRuNI\nUT6ksNuAhrBiNTsGx5/R+KntnwKBgQC3bbOsMdceIsGJLoBVjz5FyAbUEFNXGizX\n/q8froSehmAa3lD/6gcvcAYL6ptt35hs1ZHEdflKSZibsntuuXLtogVSCeaSbMR1\nR6m1FYhEdRh2X5iIVcpNakqfREIgdIy3yNXhhR9SbVMwKwM2KrBFWS1M68STKVT+\nFZ6Sk6B6+QKBgQCsTr6IZ/5bLQ0sufqKmaUT5irCtqSXOPy5RI6UUIu1kQ8QAsZJ\nWodSasQMPK/pEufnUWkkbzkWcvK1y+B5eGuzWhYUkdsB+g0z9uX0H3KmWV+D5RIF\nKDg9U/qzncLFwuFIg2wT2+J+FPqsiHlDhSUOif05RL8hbVvdCKZ/ZZS8uwKBgHc0\nvQKYNWQpVDtx1AdGm0LAVue0YGUH5sLMikT9psRbMdPkTSGzls3WcKeH5VEHccix\nFxVlUghcQehVmu//Z1hV5j1Fn+ni894AH6NGhhNvQeGUCM35awram/pbYtoyxEyg\nIZd5azynPdvc6C5ombvH06/cvRiiUND7fd1mQXIJAoGBALKBga7hsyJSwjrJN3Nf\n9r5d4tq8YecWBdrW9za1FZrTCnNsQbTQRzIvXYmlbpQs8fNybVM1nzlOOTEjybIh\nO2fgsmqaYjL43FQ6fhLNZhKOnHIjiivRMmQHe9DFaIvcL7OfAjieLU4rYUrRqrLV\n7I4RGZn1LKnw7Gjkt0ir9l16\n-----END PRIVATE KEY-----\n","clientEmail":"firebase-adminsdk-4sjyw@sno-club.iam.gserviceaccount.com","httpClient":{"retry":{"maxRetries":4,"statusCodes":[503],"ioErrorCodes":["ECONNRESET","ETIMEDOUT"],"backOffFactor":0.5,"maxDelayInMillis":60000}}}}
+[debug] [2020-01-24T16:43:47.752Z] [worker-~diagnostic~-b2c53d62-4153-4793-8cfb-b3fde3f558e8]: IDLE
+[debug] [2020-01-24T16:43:54.417Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-01-24T16:43:54.417Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-01-24T16:43:54.417Z] Accepted request POST /sno-club/us-central1/api/sync/mailchimp --> api
+[debug] [2020-01-24T16:43:54.417Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-24T16:43:54.419Z] [worker-pool] addWorker(api)
+[debug] [2020-01-24T16:43:54.419Z] [worker-pool] Adding worker with key api, total=1
+[debug] [2020-01-24T16:43:54.420Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-01-24T16:43:54.420Z] [worker-api-ed411890-14bc-43aa-8d5b-1021bdcb2e3d]: Assigning socketPath: \\?\pipe\D:\Code\School\SNO\web-app\functions\1636
+[debug] [2020-01-24T16:43:54.420Z] [worker-api-ed411890-14bc-43aa-8d5b-1021bdcb2e3d]: BUSY
+[debug] [2020-01-24T16:43:54.752Z] [runtime-status] [1636] Functions runtime initialized. {"cwd":"D:\\Code\\School\\SNO\\web-app\\functions","node_version":"10.14.2"}
+[debug] [2020-01-24T16:43:54.754Z] [runtime-status] [1636] Disabled runtime features: undefined
+[debug] [2020-01-24T16:43:54.758Z] [runtime-status] [1636] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.1","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-01-24T16:43:54.760Z] [runtime-status] [1636] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-24T16:43:55.060Z] [runtime-status] [1636] Found google-gax at D:\Code\School\SNO\web-app\functions\node_modules\google-gax\build\src\index.js
+[debug] [2020-01-24T16:43:55.061Z] [runtime-status] [1636] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2020-01-24T16:43:55.108Z] [runtime-status] [1636] Checked functions.config() {"config":{}}
+[debug] [2020-01-24T16:43:55.109Z] [runtime-status] [1636] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-24T16:43:55.110Z] [runtime-status] [1636] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.1","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-01-24T16:43:55.110Z] [runtime-status] [1636] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-24T16:43:55.179Z] [runtime-status] [1636] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.9.1","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2020-01-24T16:43:55.555Z] [runtime-status] [1636] initializeApp(DEFAULT) {"databaseURL":"https://sno-club.firebaseio.com","storageBucket":"sno-club.appspot.com","projectId":"sno-club","credential":{"projectId":"sno-club","privateKey":"-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCLMM7xv4KGWhZU\nzJJNEHJBD+l1Q1p6H8GRcPlH/sX3phAyxYr3e68nJVxvECYAhKRu1veJ0DMfiWkK\nwVLmSwJvA6/qiqKNckwHTt29v0i3SrpBPtLJfLlLYh9/CxwZOqCI7CtyYA1aN1F2\nSLixGNWINcacnYo2OUg9txs+vMrF/sVCNJaFp5hBupmNhe/RLwplGMdyNMS2EJJ5\nFKfSQgM6RoG6KsL+DP9pcGI4gBxoxNb/3dOPJvSJ0K2yFtJfkMnYFXo+Z1xd7HYf\nsPl3LFX14RyFtT3y0DQL46vaB86x9+NVI1JVNZB3jKaKvpwRLFvsLYf9BzjxRyD2\nKBCo5eWnAgMBAAECggEARD8mwM7TS1fBikuR0lplgvQv1lCzfJy0dsELYRsQ6xfP\n6m0EccsBuvJtK4Gh+HARBc2+KqLcZjKkP+NBZ+xQYalPqHLYN/1aPN0VCTPQjhqE\nT3hjtupCGi2e3tZOLSqbSvdtaBOjiGAGP7ZxZFgWXsZrPyBZg7O7cZMltzGvRLuo\nwYWu/TlrZIxJAn7Xjv8r0jv0Vn+twv3bsL0QUQ7gFKLhTzOY1zQVNIelt33D4iUf\npfyDRspCuagkcC3lsldnvX+E6uoSeIzJKhuB79OZUJDb31Bhy1h/YC2K8QPbWnt8\nMSiGmlE6sRB107snaiTqAWVb15TWsAm7K5XrT02H2QKBgQDCQol5vOOERFTleM64\nFyUrvXX1/ejVzg0kZ0dA8I5J7SU/f5OK6gO61WUTvKOwnq8HB6kKfLb++VwVU3Vf\nctFd3fbuU7udyAGBlWiwNn8hHNTVrV2oWM4o4KGsF1VSii3/+gfuvJwHM85HRuNI\nUT6ksNuAhrBiNTsGx5/R+KntnwKBgQC3bbOsMdceIsGJLoBVjz5FyAbUEFNXGizX\n/q8froSehmAa3lD/6gcvcAYL6ptt35hs1ZHEdflKSZibsntuuXLtogVSCeaSbMR1\nR6m1FYhEdRh2X5iIVcpNakqfREIgdIy3yNXhhR9SbVMwKwM2KrBFWS1M68STKVT+\nFZ6Sk6B6+QKBgQCsTr6IZ/5bLQ0sufqKmaUT5irCtqSXOPy5RI6UUIu1kQ8QAsZJ\nWodSasQMPK/pEufnUWkkbzkWcvK1y+B5eGuzWhYUkdsB+g0z9uX0H3KmWV+D5RIF\nKDg9U/qzncLFwuFIg2wT2+J+FPqsiHlDhSUOif05RL8hbVvdCKZ/ZZS8uwKBgHc0\nvQKYNWQpVDtx1AdGm0LAVue0YGUH5sLMikT9psRbMdPkTSGzls3WcKeH5VEHccix\nFxVlUghcQehVmu//Z1hV5j1Fn+ni894AH6NGhhNvQeGUCM35awram/pbYtoyxEyg\nIZd5azynPdvc6C5ombvH06/cvRiiUND7fd1mQXIJAoGBALKBga7hsyJSwjrJN3Nf\n9r5d4tq8YecWBdrW9za1FZrTCnNsQbTQRzIvXYmlbpQs8fNybVM1nzlOOTEjybIh\nO2fgsmqaYjL43FQ6fhLNZhKOnHIjiivRMmQHe9DFaIvcL7OfAjieLU4rYUrRqrLV\n7I4RGZn1LKnw7Gjkt0ir9l16\n-----END PRIVATE KEY-----\n","clientEmail":"firebase-adminsdk-4sjyw@sno-club.iam.gserviceaccount.com","httpClient":{"retry":{"maxRetries":4,"statusCodes":[503],"ioErrorCodes":["ECONNRESET","ETIMEDOUT"],"backOffFactor":0.5,"maxDelayInMillis":60000}}}}
+[debug] [2020-01-24T16:43:55.624Z] [runtime-status] [1636] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-01-24T16:43:55.624Z] [runtime-status] [1636] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-01-24T16:43:55.625Z] [runtime-status] [1636] Running api in mode HTTPS
+[debug] [2020-01-24T16:43:55.626Z] [runtime-status] [1636] Attempting to listen to socketPath: \\?\pipe\D:\Code\School\SNO\web-app\functions\1636
+[debug] [2020-01-24T16:43:55.629Z] [functions] Runtime ready! Sending request!
+[debug] [2020-01-24T16:43:55.637Z] [runtime-status] [1636] Ephemeral server handling POST request
+[debug] [2020-01-24T16:43:55.642Z] [runtime-status] [1636] Ephemeral server survived.
+[warn] !  External network resource requested!
+   - URL: "https://us16.api.mailchimp.com/3.0/lists/7f5d3fde05/segments/46373/members"
+ - Be careful, this may be a production service.
+[info] >  Fri, 24 Jan 2020 16:43:56 GMT express deprecated res.send(status): Use res.sendStatus(status) instead at routes\api.js:38:13
+[warn] !  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production.
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-01-24T16:43:56.137Z] [worker-api-ed411890-14bc-43aa-8d5b-1021bdcb2e3d]: IDLE
+[debug] [2020-01-24T16:43:56.137Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[warn] !  Google API requested!
+   - URL: "https://www.googleapis.com/oauth2/v4/token"
+   - Be careful, this may be a production service.
+[info] >  attendee added withundefined
+[info] >  attendee added withundefined
+[info] >  attendee added withundefined
+[info] >  attendee added withundefined
+[info] >  attendee added withundefined
+[info] >  attendee added withundefined
+[info] >  attendee added withundefined
+[info] >  attendee added withundefined
+[info] >  attendee added withundefined
+[info] >  attendee added withundefined
+[debug] [2020-01-24T16:47:30.220Z] File D:\Code\School\SNO\web-app\functions\routes\api.js changed, reloading triggers
+[debug] [2020-01-24T16:47:31.221Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-24T16:47:31.221Z] [worker-~diagnostic~-b2c53d62-4153-4793-8cfb-b3fde3f558e8]: FINISHING
+[debug] [2020-01-24T16:47:31.221Z] [worker-pool] Shutting down IDLE worker (api)
+[debug] [2020-01-24T16:47:31.221Z] [worker-api-ed411890-14bc-43aa-8d5b-1021bdcb2e3d]: FINISHING
+[debug] [2020-01-24T16:47:31.223Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-24T16:47:31.223Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-24T16:47:31.223Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-24T16:47:31.223Z] [worker-~diagnostic~-49b8e245-ac6b-4aff-84b3-90380bb4d62f]: Assigning socketPath: \\?\pipe\D:\Code\School\SNO\web-app\functions\19096
+[debug] [2020-01-24T16:47:31.223Z] [worker-~diagnostic~-49b8e245-ac6b-4aff-84b3-90380bb4d62f]: BUSY
+[debug] [2020-01-24T16:47:31.227Z] [worker-~diagnostic~-b2c53d62-4153-4793-8cfb-b3fde3f558e8]: exited
+[debug] [2020-01-24T16:47:31.227Z] [worker-~diagnostic~-b2c53d62-4153-4793-8cfb-b3fde3f558e8]: FINISHED
+[debug] [2020-01-24T16:47:31.227Z] [worker-api-ed411890-14bc-43aa-8d5b-1021bdcb2e3d]: exited
+[debug] [2020-01-24T16:47:31.228Z] [worker-api-ed411890-14bc-43aa-8d5b-1021bdcb2e3d]: FINISHED
+[debug] [2020-01-24T16:47:31.538Z] [runtime-status] [19096] Functions runtime initialized. {"cwd":"D:\\Code\\School\\SNO\\web-app\\functions","node_version":"10.14.2"}
+[debug] [2020-01-24T16:47:31.539Z] [runtime-status] [19096] Disabled runtime features: undefined
+[debug] [2020-01-24T16:47:31.543Z] [runtime-status] [19096] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.1","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-01-24T16:47:31.545Z] [runtime-status] [19096] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-24T16:47:31.845Z] [runtime-status] [19096] Found google-gax at D:\Code\School\SNO\web-app\functions\node_modules\google-gax\build\src\index.js
+[debug] [2020-01-24T16:47:31.845Z] [runtime-status] [19096] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2020-01-24T16:47:31.891Z] [runtime-status] [19096] Checked functions.config() {"config":{}}
+[debug] [2020-01-24T16:47:31.892Z] [runtime-status] [19096] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-24T16:47:31.893Z] [runtime-status] [19096] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.1","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-01-24T16:47:31.894Z] [runtime-status] [19096] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-24T16:47:31.961Z] [runtime-status] [19096] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.9.1","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2020-01-24T16:47:32.335Z] [runtime-status] [19096] initializeApp(DEFAULT) {"databaseURL":"https://sno-club.firebaseio.com","storageBucket":"sno-club.appspot.com","projectId":"sno-club","credential":{"projectId":"sno-club","privateKey":"-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCLMM7xv4KGWhZU\nzJJNEHJBD+l1Q1p6H8GRcPlH/sX3phAyxYr3e68nJVxvECYAhKRu1veJ0DMfiWkK\nwVLmSwJvA6/qiqKNckwHTt29v0i3SrpBPtLJfLlLYh9/CxwZOqCI7CtyYA1aN1F2\nSLixGNWINcacnYo2OUg9txs+vMrF/sVCNJaFp5hBupmNhe/RLwplGMdyNMS2EJJ5\nFKfSQgM6RoG6KsL+DP9pcGI4gBxoxNb/3dOPJvSJ0K2yFtJfkMnYFXo+Z1xd7HYf\nsPl3LFX14RyFtT3y0DQL46vaB86x9+NVI1JVNZB3jKaKvpwRLFvsLYf9BzjxRyD2\nKBCo5eWnAgMBAAECggEARD8mwM7TS1fBikuR0lplgvQv1lCzfJy0dsELYRsQ6xfP\n6m0EccsBuvJtK4Gh+HARBc2+KqLcZjKkP+NBZ+xQYalPqHLYN/1aPN0VCTPQjhqE\nT3hjtupCGi2e3tZOLSqbSvdtaBOjiGAGP7ZxZFgWXsZrPyBZg7O7cZMltzGvRLuo\nwYWu/TlrZIxJAn7Xjv8r0jv0Vn+twv3bsL0QUQ7gFKLhTzOY1zQVNIelt33D4iUf\npfyDRspCuagkcC3lsldnvX+E6uoSeIzJKhuB79OZUJDb31Bhy1h/YC2K8QPbWnt8\nMSiGmlE6sRB107snaiTqAWVb15TWsAm7K5XrT02H2QKBgQDCQol5vOOERFTleM64\nFyUrvXX1/ejVzg0kZ0dA8I5J7SU/f5OK6gO61WUTvKOwnq8HB6kKfLb++VwVU3Vf\nctFd3fbuU7udyAGBlWiwNn8hHNTVrV2oWM4o4KGsF1VSii3/+gfuvJwHM85HRuNI\nUT6ksNuAhrBiNTsGx5/R+KntnwKBgQC3bbOsMdceIsGJLoBVjz5FyAbUEFNXGizX\n/q8froSehmAa3lD/6gcvcAYL6ptt35hs1ZHEdflKSZibsntuuXLtogVSCeaSbMR1\nR6m1FYhEdRh2X5iIVcpNakqfREIgdIy3yNXhhR9SbVMwKwM2KrBFWS1M68STKVT+\nFZ6Sk6B6+QKBgQCsTr6IZ/5bLQ0sufqKmaUT5irCtqSXOPy5RI6UUIu1kQ8QAsZJ\nWodSasQMPK/pEufnUWkkbzkWcvK1y+B5eGuzWhYUkdsB+g0z9uX0H3KmWV+D5RIF\nKDg9U/qzncLFwuFIg2wT2+J+FPqsiHlDhSUOif05RL8hbVvdCKZ/ZZS8uwKBgHc0\nvQKYNWQpVDtx1AdGm0LAVue0YGUH5sLMikT9psRbMdPkTSGzls3WcKeH5VEHccix\nFxVlUghcQehVmu//Z1hV5j1Fn+ni894AH6NGhhNvQeGUCM35awram/pbYtoyxEyg\nIZd5azynPdvc6C5ombvH06/cvRiiUND7fd1mQXIJAoGBALKBga7hsyJSwjrJN3Nf\n9r5d4tq8YecWBdrW9za1FZrTCnNsQbTQRzIvXYmlbpQs8fNybVM1nzlOOTEjybIh\nO2fgsmqaYjL43FQ6fhLNZhKOnHIjiivRMmQHe9DFaIvcL7OfAjieLU4rYUrRqrLV\n7I4RGZn1LKnw7Gjkt0ir9l16\n-----END PRIVATE KEY-----\n","clientEmail":"firebase-adminsdk-4sjyw@sno-club.iam.gserviceaccount.com","httpClient":{"retry":{"maxRetries":4,"statusCodes":[503],"ioErrorCodes":["ECONNRESET","ETIMEDOUT"],"backOffFactor":0.5,"maxDelayInMillis":60000}}}}
+[debug] [2020-01-24T16:47:32.402Z] [worker-~diagnostic~-49b8e245-ac6b-4aff-84b3-90380bb4d62f]: IDLE
+[debug] [2020-01-24T16:47:38.389Z] File D:\Code\School\SNO\web-app\functions\routes\api.js changed, reloading triggers
+[debug] [2020-01-24T16:47:39.391Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-24T16:47:39.391Z] [worker-~diagnostic~-49b8e245-ac6b-4aff-84b3-90380bb4d62f]: FINISHING
+[debug] [2020-01-24T16:47:39.391Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-24T16:47:39.391Z] [worker-pool] Cleaned up workers for api: 1 --> 0
+[debug] [2020-01-24T16:47:39.393Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-24T16:47:39.393Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-24T16:47:39.393Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-24T16:47:39.393Z] [worker-~diagnostic~-775a96c2-faac-4269-8f21-0cff9cbb90c2]: Assigning socketPath: \\?\pipe\D:\Code\School\SNO\web-app\functions\14556
+[debug] [2020-01-24T16:47:39.393Z] [worker-~diagnostic~-775a96c2-faac-4269-8f21-0cff9cbb90c2]: BUSY
+[debug] [2020-01-24T16:47:39.398Z] [worker-~diagnostic~-49b8e245-ac6b-4aff-84b3-90380bb4d62f]: exited
+[debug] [2020-01-24T16:47:39.398Z] [worker-~diagnostic~-49b8e245-ac6b-4aff-84b3-90380bb4d62f]: FINISHED
+[debug] [2020-01-24T16:47:39.724Z] [runtime-status] [14556] Functions runtime initialized. {"cwd":"D:\\Code\\School\\SNO\\web-app\\functions","node_version":"10.14.2"}
+[debug] [2020-01-24T16:47:39.725Z] [runtime-status] [14556] Disabled runtime features: undefined
+[debug] [2020-01-24T16:47:39.729Z] [runtime-status] [14556] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.1","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-01-24T16:47:39.731Z] [runtime-status] [14556] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-24T16:47:40.031Z] [runtime-status] [14556] Found google-gax at D:\Code\School\SNO\web-app\functions\node_modules\google-gax\build\src\index.js
+[debug] [2020-01-24T16:47:40.032Z] [runtime-status] [14556] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2020-01-24T16:47:40.081Z] [runtime-status] [14556] Checked functions.config() {"config":{}}
+[debug] [2020-01-24T16:47:40.082Z] [runtime-status] [14556] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-24T16:47:40.083Z] [runtime-status] [14556] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.1","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-01-24T16:47:40.083Z] [runtime-status] [14556] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-24T16:47:40.150Z] [runtime-status] [14556] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.9.1","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2020-01-24T16:47:40.521Z] [runtime-status] [14556] initializeApp(DEFAULT) {"databaseURL":"https://sno-club.firebaseio.com","storageBucket":"sno-club.appspot.com","projectId":"sno-club","credential":{"projectId":"sno-club","privateKey":"-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCLMM7xv4KGWhZU\nzJJNEHJBD+l1Q1p6H8GRcPlH/sX3phAyxYr3e68nJVxvECYAhKRu1veJ0DMfiWkK\nwVLmSwJvA6/qiqKNckwHTt29v0i3SrpBPtLJfLlLYh9/CxwZOqCI7CtyYA1aN1F2\nSLixGNWINcacnYo2OUg9txs+vMrF/sVCNJaFp5hBupmNhe/RLwplGMdyNMS2EJJ5\nFKfSQgM6RoG6KsL+DP9pcGI4gBxoxNb/3dOPJvSJ0K2yFtJfkMnYFXo+Z1xd7HYf\nsPl3LFX14RyFtT3y0DQL46vaB86x9+NVI1JVNZB3jKaKvpwRLFvsLYf9BzjxRyD2\nKBCo5eWnAgMBAAECggEARD8mwM7TS1fBikuR0lplgvQv1lCzfJy0dsELYRsQ6xfP\n6m0EccsBuvJtK4Gh+HARBc2+KqLcZjKkP+NBZ+xQYalPqHLYN/1aPN0VCTPQjhqE\nT3hjtupCGi2e3tZOLSqbSvdtaBOjiGAGP7ZxZFgWXsZrPyBZg7O7cZMltzGvRLuo\nwYWu/TlrZIxJAn7Xjv8r0jv0Vn+twv3bsL0QUQ7gFKLhTzOY1zQVNIelt33D4iUf\npfyDRspCuagkcC3lsldnvX+E6uoSeIzJKhuB79OZUJDb31Bhy1h/YC2K8QPbWnt8\nMSiGmlE6sRB107snaiTqAWVb15TWsAm7K5XrT02H2QKBgQDCQol5vOOERFTleM64\nFyUrvXX1/ejVzg0kZ0dA8I5J7SU/f5OK6gO61WUTvKOwnq8HB6kKfLb++VwVU3Vf\nctFd3fbuU7udyAGBlWiwNn8hHNTVrV2oWM4o4KGsF1VSii3/+gfuvJwHM85HRuNI\nUT6ksNuAhrBiNTsGx5/R+KntnwKBgQC3bbOsMdceIsGJLoBVjz5FyAbUEFNXGizX\n/q8froSehmAa3lD/6gcvcAYL6ptt35hs1ZHEdflKSZibsntuuXLtogVSCeaSbMR1\nR6m1FYhEdRh2X5iIVcpNakqfREIgdIy3yNXhhR9SbVMwKwM2KrBFWS1M68STKVT+\nFZ6Sk6B6+QKBgQCsTr6IZ/5bLQ0sufqKmaUT5irCtqSXOPy5RI6UUIu1kQ8QAsZJ\nWodSasQMPK/pEufnUWkkbzkWcvK1y+B5eGuzWhYUkdsB+g0z9uX0H3KmWV+D5RIF\nKDg9U/qzncLFwuFIg2wT2+J+FPqsiHlDhSUOif05RL8hbVvdCKZ/ZZS8uwKBgHc0\nvQKYNWQpVDtx1AdGm0LAVue0YGUH5sLMikT9psRbMdPkTSGzls3WcKeH5VEHccix\nFxVlUghcQehVmu//Z1hV5j1Fn+ni894AH6NGhhNvQeGUCM35awram/pbYtoyxEyg\nIZd5azynPdvc6C5ombvH06/cvRiiUND7fd1mQXIJAoGBALKBga7hsyJSwjrJN3Nf\n9r5d4tq8YecWBdrW9za1FZrTCnNsQbTQRzIvXYmlbpQs8fNybVM1nzlOOTEjybIh\nO2fgsmqaYjL43FQ6fhLNZhKOnHIjiivRMmQHe9DFaIvcL7OfAjieLU4rYUrRqrLV\n7I4RGZn1LKnw7Gjkt0ir9l16\n-----END PRIVATE KEY-----\n","clientEmail":"firebase-adminsdk-4sjyw@sno-club.iam.gserviceaccount.com","httpClient":{"retry":{"maxRetries":4,"statusCodes":[503],"ioErrorCodes":["ECONNRESET","ETIMEDOUT"],"backOffFactor":0.5,"maxDelayInMillis":60000}}}}
+[debug] [2020-01-24T16:47:40.588Z] [worker-~diagnostic~-775a96c2-faac-4269-8f21-0cff9cbb90c2]: IDLE
+[debug] [2020-01-24T16:47:41.979Z] File D:\Code\School\SNO\web-app\functions\routes\api.js changed, reloading triggers
+[debug] [2020-01-24T16:47:42.981Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-24T16:47:42.981Z] [worker-~diagnostic~-775a96c2-faac-4269-8f21-0cff9cbb90c2]: FINISHING
+[debug] [2020-01-24T16:47:42.981Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-24T16:47:42.983Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-24T16:47:42.983Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-24T16:47:42.983Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-24T16:47:42.983Z] [worker-~diagnostic~-6c411715-b47f-486f-a091-087463a808f8]: Assigning socketPath: \\?\pipe\D:\Code\School\SNO\web-app\functions\9168
+[debug] [2020-01-24T16:47:42.983Z] [worker-~diagnostic~-6c411715-b47f-486f-a091-087463a808f8]: BUSY
+[debug] [2020-01-24T16:47:42.988Z] [worker-~diagnostic~-775a96c2-faac-4269-8f21-0cff9cbb90c2]: exited
+[debug] [2020-01-24T16:47:42.988Z] [worker-~diagnostic~-775a96c2-faac-4269-8f21-0cff9cbb90c2]: FINISHED
+[debug] [2020-01-24T16:47:43.299Z] [runtime-status] [9168] Functions runtime initialized. {"cwd":"D:\\Code\\School\\SNO\\web-app\\functions","node_version":"10.14.2"}
+[debug] [2020-01-24T16:47:43.300Z] [runtime-status] [9168] Disabled runtime features: undefined
+[debug] [2020-01-24T16:47:43.304Z] [runtime-status] [9168] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.1","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-01-24T16:47:43.306Z] [runtime-status] [9168] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-24T16:47:43.605Z] [runtime-status] [9168] Found google-gax at D:\Code\School\SNO\web-app\functions\node_modules\google-gax\build\src\index.js
+[debug] [2020-01-24T16:47:43.605Z] [runtime-status] [9168] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2020-01-24T16:47:43.651Z] [runtime-status] [9168] Checked functions.config() {"config":{}}
+[debug] [2020-01-24T16:47:43.652Z] [runtime-status] [9168] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-24T16:47:43.653Z] [runtime-status] [9168] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.1","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-01-24T16:47:43.654Z] [runtime-status] [9168] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-24T16:47:43.719Z] [runtime-status] [9168] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.9.1","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2020-01-24T16:47:44.100Z] [runtime-status] [9168] initializeApp(DEFAULT) {"databaseURL":"https://sno-club.firebaseio.com","storageBucket":"sno-club.appspot.com","projectId":"sno-club","credential":{"projectId":"sno-club","privateKey":"-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCLMM7xv4KGWhZU\nzJJNEHJBD+l1Q1p6H8GRcPlH/sX3phAyxYr3e68nJVxvECYAhKRu1veJ0DMfiWkK\nwVLmSwJvA6/qiqKNckwHTt29v0i3SrpBPtLJfLlLYh9/CxwZOqCI7CtyYA1aN1F2\nSLixGNWINcacnYo2OUg9txs+vMrF/sVCNJaFp5hBupmNhe/RLwplGMdyNMS2EJJ5\nFKfSQgM6RoG6KsL+DP9pcGI4gBxoxNb/3dOPJvSJ0K2yFtJfkMnYFXo+Z1xd7HYf\nsPl3LFX14RyFtT3y0DQL46vaB86x9+NVI1JVNZB3jKaKvpwRLFvsLYf9BzjxRyD2\nKBCo5eWnAgMBAAECggEARD8mwM7TS1fBikuR0lplgvQv1lCzfJy0dsELYRsQ6xfP\n6m0EccsBuvJtK4Gh+HARBc2+KqLcZjKkP+NBZ+xQYalPqHLYN/1aPN0VCTPQjhqE\nT3hjtupCGi2e3tZOLSqbSvdtaBOjiGAGP7ZxZFgWXsZrPyBZg7O7cZMltzGvRLuo\nwYWu/TlrZIxJAn7Xjv8r0jv0Vn+twv3bsL0QUQ7gFKLhTzOY1zQVNIelt33D4iUf\npfyDRspCuagkcC3lsldnvX+E6uoSeIzJKhuB79OZUJDb31Bhy1h/YC2K8QPbWnt8\nMSiGmlE6sRB107snaiTqAWVb15TWsAm7K5XrT02H2QKBgQDCQol5vOOERFTleM64\nFyUrvXX1/ejVzg0kZ0dA8I5J7SU/f5OK6gO61WUTvKOwnq8HB6kKfLb++VwVU3Vf\nctFd3fbuU7udyAGBlWiwNn8hHNTVrV2oWM4o4KGsF1VSii3/+gfuvJwHM85HRuNI\nUT6ksNuAhrBiNTsGx5/R+KntnwKBgQC3bbOsMdceIsGJLoBVjz5FyAbUEFNXGizX\n/q8froSehmAa3lD/6gcvcAYL6ptt35hs1ZHEdflKSZibsntuuXLtogVSCeaSbMR1\nR6m1FYhEdRh2X5iIVcpNakqfREIgdIy3yNXhhR9SbVMwKwM2KrBFWS1M68STKVT+\nFZ6Sk6B6+QKBgQCsTr6IZ/5bLQ0sufqKmaUT5irCtqSXOPy5RI6UUIu1kQ8QAsZJ\nWodSasQMPK/pEufnUWkkbzkWcvK1y+B5eGuzWhYUkdsB+g0z9uX0H3KmWV+D5RIF\nKDg9U/qzncLFwuFIg2wT2+J+FPqsiHlDhSUOif05RL8hbVvdCKZ/ZZS8uwKBgHc0\nvQKYNWQpVDtx1AdGm0LAVue0YGUH5sLMikT9psRbMdPkTSGzls3WcKeH5VEHccix\nFxVlUghcQehVmu//Z1hV5j1Fn+ni894AH6NGhhNvQeGUCM35awram/pbYtoyxEyg\nIZd5azynPdvc6C5ombvH06/cvRiiUND7fd1mQXIJAoGBALKBga7hsyJSwjrJN3Nf\n9r5d4tq8YecWBdrW9za1FZrTCnNsQbTQRzIvXYmlbpQs8fNybVM1nzlOOTEjybIh\nO2fgsmqaYjL43FQ6fhLNZhKOnHIjiivRMmQHe9DFaIvcL7OfAjieLU4rYUrRqrLV\n7I4RGZn1LKnw7Gjkt0ir9l16\n-----END PRIVATE KEY-----\n","clientEmail":"firebase-adminsdk-4sjyw@sno-club.iam.gserviceaccount.com","httpClient":{"retry":{"maxRetries":4,"statusCodes":[503],"ioErrorCodes":["ECONNRESET","ETIMEDOUT"],"backOffFactor":0.5,"maxDelayInMillis":60000}}}}
+[debug] [2020-01-24T16:47:44.170Z] [worker-~diagnostic~-6c411715-b47f-486f-a091-087463a808f8]: IDLE
+[debug] [2020-01-24T16:47:56.619Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-01-24T16:47:56.619Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-01-24T16:47:56.620Z] Accepted request POST /sno-club/us-central1/api/sync/mailchimp --> api
+[debug] [2020-01-24T16:47:56.620Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-24T16:47:56.621Z] [worker-pool] addWorker(api)
+[debug] [2020-01-24T16:47:56.621Z] [worker-pool] Adding worker with key api, total=1
+[debug] [2020-01-24T16:47:56.621Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-01-24T16:47:56.622Z] [worker-api-21d13cc7-f8a7-472d-b4c2-1e84f4a4b9f0]: Assigning socketPath: \\?\pipe\D:\Code\School\SNO\web-app\functions\30176
+[debug] [2020-01-24T16:47:56.622Z] [worker-api-21d13cc7-f8a7-472d-b4c2-1e84f4a4b9f0]: BUSY
+[debug] [2020-01-24T16:47:56.945Z] [runtime-status] [30176] Functions runtime initialized. {"cwd":"D:\\Code\\School\\SNO\\web-app\\functions","node_version":"10.14.2"}
+[debug] [2020-01-24T16:47:56.946Z] [runtime-status] [30176] Disabled runtime features: undefined
+[debug] [2020-01-24T16:47:56.951Z] [runtime-status] [30176] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.1","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-01-24T16:47:56.953Z] [runtime-status] [30176] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-24T16:47:57.252Z] [runtime-status] [30176] Found google-gax at D:\Code\School\SNO\web-app\functions\node_modules\google-gax\build\src\index.js
+[debug] [2020-01-24T16:47:57.252Z] [runtime-status] [30176] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2020-01-24T16:47:57.299Z] [runtime-status] [30176] Checked functions.config() {"config":{}}
+[debug] [2020-01-24T16:47:57.300Z] [runtime-status] [30176] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-24T16:47:57.301Z] [runtime-status] [30176] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.1","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-01-24T16:47:57.302Z] [runtime-status] [30176] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-24T16:47:57.369Z] [runtime-status] [30176] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.9.1","resolution":"D:\\Code\\School\\SNO\\web-app\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2020-01-24T16:47:57.744Z] [runtime-status] [30176] initializeApp(DEFAULT) {"databaseURL":"https://sno-club.firebaseio.com","storageBucket":"sno-club.appspot.com","projectId":"sno-club","credential":{"projectId":"sno-club","privateKey":"-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCLMM7xv4KGWhZU\nzJJNEHJBD+l1Q1p6H8GRcPlH/sX3phAyxYr3e68nJVxvECYAhKRu1veJ0DMfiWkK\nwVLmSwJvA6/qiqKNckwHTt29v0i3SrpBPtLJfLlLYh9/CxwZOqCI7CtyYA1aN1F2\nSLixGNWINcacnYo2OUg9txs+vMrF/sVCNJaFp5hBupmNhe/RLwplGMdyNMS2EJJ5\nFKfSQgM6RoG6KsL+DP9pcGI4gBxoxNb/3dOPJvSJ0K2yFtJfkMnYFXo+Z1xd7HYf\nsPl3LFX14RyFtT3y0DQL46vaB86x9+NVI1JVNZB3jKaKvpwRLFvsLYf9BzjxRyD2\nKBCo5eWnAgMBAAECggEARD8mwM7TS1fBikuR0lplgvQv1lCzfJy0dsELYRsQ6xfP\n6m0EccsBuvJtK4Gh+HARBc2+KqLcZjKkP+NBZ+xQYalPqHLYN/1aPN0VCTPQjhqE\nT3hjtupCGi2e3tZOLSqbSvdtaBOjiGAGP7ZxZFgWXsZrPyBZg7O7cZMltzGvRLuo\nwYWu/TlrZIxJAn7Xjv8r0jv0Vn+twv3bsL0QUQ7gFKLhTzOY1zQVNIelt33D4iUf\npfyDRspCuagkcC3lsldnvX+E6uoSeIzJKhuB79OZUJDb31Bhy1h/YC2K8QPbWnt8\nMSiGmlE6sRB107snaiTqAWVb15TWsAm7K5XrT02H2QKBgQDCQol5vOOERFTleM64\nFyUrvXX1/ejVzg0kZ0dA8I5J7SU/f5OK6gO61WUTvKOwnq8HB6kKfLb++VwVU3Vf\nctFd3fbuU7udyAGBlWiwNn8hHNTVrV2oWM4o4KGsF1VSii3/+gfuvJwHM85HRuNI\nUT6ksNuAhrBiNTsGx5/R+KntnwKBgQC3bbOsMdceIsGJLoBVjz5FyAbUEFNXGizX\n/q8froSehmAa3lD/6gcvcAYL6ptt35hs1ZHEdflKSZibsntuuXLtogVSCeaSbMR1\nR6m1FYhEdRh2X5iIVcpNakqfREIgdIy3yNXhhR9SbVMwKwM2KrBFWS1M68STKVT+\nFZ6Sk6B6+QKBgQCsTr6IZ/5bLQ0sufqKmaUT5irCtqSXOPy5RI6UUIu1kQ8QAsZJ\nWodSasQMPK/pEufnUWkkbzkWcvK1y+B5eGuzWhYUkdsB+g0z9uX0H3KmWV+D5RIF\nKDg9U/qzncLFwuFIg2wT2+J+FPqsiHlDhSUOif05RL8hbVvdCKZ/ZZS8uwKBgHc0\nvQKYNWQpVDtx1AdGm0LAVue0YGUH5sLMikT9psRbMdPkTSGzls3WcKeH5VEHccix\nFxVlUghcQehVmu//Z1hV5j1Fn+ni894AH6NGhhNvQeGUCM35awram/pbYtoyxEyg\nIZd5azynPdvc6C5ombvH06/cvRiiUND7fd1mQXIJAoGBALKBga7hsyJSwjrJN3Nf\n9r5d4tq8YecWBdrW9za1FZrTCnNsQbTQRzIvXYmlbpQs8fNybVM1nzlOOTEjybIh\nO2fgsmqaYjL43FQ6fhLNZhKOnHIjiivRMmQHe9DFaIvcL7OfAjieLU4rYUrRqrLV\n7I4RGZn1LKnw7Gjkt0ir9l16\n-----END PRIVATE KEY-----\n","clientEmail":"firebase-adminsdk-4sjyw@sno-club.iam.gserviceaccount.com","httpClient":{"retry":{"maxRetries":4,"statusCodes":[503],"ioErrorCodes":["ECONNRESET","ETIMEDOUT"],"backOffFactor":0.5,"maxDelayInMillis":60000}}}}
+[debug] [2020-01-24T16:47:57.815Z] [runtime-status] [30176] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-01-24T16:47:57.817Z] [runtime-status] [30176] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-01-24T16:47:57.817Z] [runtime-status] [30176] Running api in mode HTTPS
+[debug] [2020-01-24T16:47:57.817Z] [runtime-status] [30176] Attempting to listen to socketPath: \\?\pipe\D:\Code\School\SNO\web-app\functions\30176
+[debug] [2020-01-24T16:47:57.820Z] [functions] Runtime ready! Sending request!
+[debug] [2020-01-24T16:47:57.826Z] [runtime-status] [30176] Ephemeral server handling POST request
+[debug] [2020-01-24T16:47:57.832Z] [runtime-status] [30176] Ephemeral server survived.
+[warn] !  External network resource requested!
+   - URL: "https://us16.api.mailchimp.com/3.0/lists/7f5d3fde05/segments/46373/members?count=100"
+ - Be careful, this may be a production service.
+[info] >  Fri, 24 Jan 2020 16:47:58 GMT express deprecated res.send(status): Use res.sendStatus(status) instead at routes\api.js:38:13
+[warn] !  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production.
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-01-24T16:47:59.081Z] [worker-api-21d13cc7-f8a7-472d-b4c2-1e84f4a4b9f0]: IDLE
+[debug] [2020-01-24T16:47:59.081Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[warn] !  Google API requested!
+   - URL: "https://www.googleapis.com/oauth2/v4/token"
+   - Be careful, this may be a production service.
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[debug] [2020-01-24T18:29:04.366Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-01-24T18:29:04.366Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-01-24T18:29:04.366Z] Accepted request POST /sno-club/us-central1/api/sync/mailchimp --> api
+[debug] [2020-01-24T18:29:04.367Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-01-24T18:29:04.367Z] [worker-api-21d13cc7-f8a7-472d-b4c2-1e84f4a4b9f0]: Assigning socketPath: \\?\pipe\D:\Code\School\SNO\web-app\functions\30176
+[debug] [2020-01-24T18:29:04.367Z] [worker-api-21d13cc7-f8a7-472d-b4c2-1e84f4a4b9f0]: BUSY
+[debug] [2020-01-24T18:29:04.368Z] [runtime-status] [30176] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-01-24T18:29:04.369Z] [runtime-status] [30176] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-01-24T18:29:04.369Z] [runtime-status] [30176] Running api in mode HTTPS
+[debug] [2020-01-24T18:29:04.370Z] [runtime-status] [30176] Attempting to listen to socketPath: \\?\pipe\D:\Code\School\SNO\web-app\functions\30176
+[debug] [2020-01-24T18:29:04.371Z] [functions] Runtime ready! Sending request!
+[debug] [2020-01-24T18:29:04.373Z] [runtime-status] [30176] Ephemeral server handling POST request
+[debug] [2020-01-24T18:29:04.374Z] [runtime-status] [30176] Ephemeral server survived.
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-01-24T18:29:06.026Z] [worker-api-21d13cc7-f8a7-472d-b4c2-1e84f4a4b9f0]: IDLE
+[debug] [2020-01-24T18:29:06.026Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[info] >  attendee added with [object Object]
+[debug] [2020-01-24T18:56:54.161Z] [worker-api-21d13cc7-f8a7-472d-b4c2-1e84f4a4b9f0]: exited
+[debug] [2020-01-24T18:56:54.161Z] [worker-api-21d13cc7-f8a7-472d-b4c2-1e84f4a4b9f0]: FINISHED
+[debug] [2020-01-24T18:56:54.168Z] [worker-~diagnostic~-6c411715-b47f-486f-a091-087463a808f8]: exited
