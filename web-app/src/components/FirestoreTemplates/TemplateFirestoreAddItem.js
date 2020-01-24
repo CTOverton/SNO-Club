@@ -9,7 +9,7 @@ function TemplateFirestoreAddItem() {
         changeInput('')
     }
 
-    function  onInputChange(e) {
+    function onInputChange(e) {
         return changeInput(e && e.target && e.target.value)
     }
 

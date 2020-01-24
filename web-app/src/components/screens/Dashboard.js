@@ -1,11 +1,19 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
+import {useFirestoreConnect} from "react-redux-firebase";
+import {Container} from "@material-ui/core";
+import AttendeeList from "../AttendeeList";
 
 function Dashboard() {
+
+    useFirestoreConnect(() => [
+        {collection: 'events'},
+        {collection: 'attendees'}
+    ])
+
     return(
-        <Button variant="contained" color="primary">
-            Primary
-        </Button>
+        <Container maxWidth="sm">
+            <AttendeeList/>
+        </Container>
     )
 }
 

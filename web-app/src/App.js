@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import configureStore from "./redux/store";
 import firebaseConfig from "./config/fbConfig";
