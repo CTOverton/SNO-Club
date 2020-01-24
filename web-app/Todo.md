@@ -1,4 +1,4 @@
-- Screen for attendees to manage attendance/status
-- Redux for firebase actions
-- Admin view attendance and user info
-- import users from csv or connect to mailchimp api
+- [x] Screen for attendees to manage attendance/status
+- [ ] Redux for firebase actions
+- [ ] Admin view attendance and user info
+- [ ] import users from csv or connect to mailchimp api
