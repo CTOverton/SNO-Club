@@ -132,4 +132,4 @@ export default App;
 2. TemplateFirestoreItem
 3. TemplateFirestoreAddItem
 
-TODO: add more
+TODO: add more...
