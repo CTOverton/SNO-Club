@@ -1,17 +1,17 @@
-###1. Bootstrap React App
+### 1. Bootstrap React App
 Run `yarn create react-app <Name of your app>`
-###2. Add Firebase
+### 2. Add Firebase
 Run `firebase init`
-###3. Add dependencies
+### 3. Add dependencies
 Run `yarn add firebase redux react-redux react-redux-firebase redux-firestore redux-thunk react-router-dom`
-###4. Folder Structure
+### 4. Folder Structure
 ```
 ├─ redux
 |   ├─  actions
 |   ├─  reducers
 ├─ config
 ```
-###5. Create Firebase Config
+### 5. Create Firebase Config
 Create `fbConfig.js` in `/config`
 ```javascript
 const firebaseConfig = {
@@ -20,7 +20,7 @@ const firebaseConfig = {
 
 export default firebaseConfig
 ```
-###6. Create React Redux Firebase Config
+### 6. Create React Redux Firebase Config
 Create `rrfCoifig.js` in `/config`
 ```javascript
 const rrfConfig = {
@@ -31,7 +31,7 @@ const rrfConfig = {
 
 export default rrfConfig
 ```
-###7. Create Root Reducer
+### 7. Create Root Reducer
 Create `rootReducer.js` in `/redux`
 ```javascript
 import {combineReducers} from "redux";
@@ -45,7 +45,7 @@ const rootReducer = combineReducers({
 
 export default rootReducer
 ```
-###8. Create Store
+### 8. Create Store
 Create `store.js` in `/redux`
 ```javascript
 import thunk from 'redux-thunk'
@@ -64,7 +64,7 @@ export default function configureStore(initialState, history) {
     return store
 }
 ```
-###8. Edit App.js
+### 8. Edit App.js
 ```javascript
 import React from 'react';
 import logo from './logo.svg';
@@ -127,7 +127,7 @@ function App() {
 export default App;
 
 ```
-###9. Create template components
+### 9. Create template components
 1. TemplateFirestoreDisplay
 2. TemplateFirestoreItem
 3. TemplateFirestoreAddItem
